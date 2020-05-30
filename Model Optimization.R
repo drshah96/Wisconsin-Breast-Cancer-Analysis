@@ -24,10 +24,3 @@ library(class)
 TestPredict1 <- knn(train = TrainData1[, 2:31], 
                    test = TestData1[, 2:31],
                    cl = TrainLabels1, k = 19)
-
-if(!require(gmodels)) install.packages("gmodels")
-library(gmodels)
-
-CrossTable(x = TestLabels1, 
-           y = TestPredict1,
-           prop.chisq = FALSE)
